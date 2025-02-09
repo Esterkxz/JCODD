@@ -179,7 +179,7 @@ class Jcodd {
 
     /**
      * Quick set object and get converted to any data type
-     * @param {*} any Jcodd or JSON or object or primitive
+     * @param {*} any BASE64 orJCODD or JSON or object or primitive
      */
     constructor(any) {
         if (typeof any == "string") try {
