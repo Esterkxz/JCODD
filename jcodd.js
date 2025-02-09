@@ -174,7 +174,7 @@ class Jcodd {
     get obj() { return this.#obj; }
     get json() { return JSON.stringify(this.#obj); }
     get jcodd() { return Jcodd.coddify(this.#obj); }
-    get base64() { return btoa(Jcodd.coddify(this.#obj)); }
+    get base64() { return btoa(this.jcodd); }
 
 
     /**
