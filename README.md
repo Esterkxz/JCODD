@@ -64,7 +64,7 @@ jc1.obj.name = "John";
 console.log(jc1.jcodd); // JSON 코드를 JCODD 형식으로 변환하여 출력
 
 const jc2 = JCODD(jc1.jcodd);
-jc2.obj.age = "29";
+jc2.obj.age = 29;
 console.log(jc2.json); // JCODD 코드를 JSON 형식으로 변환하여 출력
 
 const jc3 = JCODD(jc2.base64);
@@ -152,7 +152,7 @@ jc1.obj.name = "John";
 console.log(jc1.jcodd); // Converts JSON code to JCODD format and outputs it
 
 const jc2 = JCODD(jc1.jcodd);
-jc2.obj.age = "29";
+jc2.obj.age = 29;
 console.log(jc2.json); // Converts JCODD code to JSON format and outputs it
 
 const jc3 = JCODD(jc2.base64);
