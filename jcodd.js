@@ -30,16 +30,19 @@ SOFTWARE.
 //
 // The JSON based lite code format
 //
-// v0.7 / release 2025.02.09
+// v0.8 / release 2025.02.17
 //
 // Take to be liten from JSON code to smaller converted characters for like as BASE64.
+//
+// And JCODD code output is only one exactly from any defined by same object structure & data.
+// Be excepted when different version of JCODD.
 //
 //
 // :: Code regulations
 //
 // 1. null is n, true is t, false is f.
-// 2. No space and carriage return & line feed on code. Only allowed in data.
-// 3. Omit "" variable definition.
+// 2. No space and carriage return & line feed in the code. Only allowed for data definition.
+// 3. Omit "" (double quote) for variable name definition.
 
 class Jcodd {
 
@@ -51,6 +54,11 @@ class Jcodd {
      * @returns {string} jcodd
      */
     static toCodd (json) {
+        switch (json) {
+            case "true": return "t";
+            case "false": return "f";
+            case "null": return "n";
+        }
         var ex;
         //Get clean json
         let p1 = JSON.stringify(JSON.parse(json));
@@ -97,6 +105,11 @@ class Jcodd {
      * @return {string} json
      */
     static toJson (codd) {
+        switch (codd) {
+            case "t": return "true";
+            case "f": return "false";
+            case "n": return "null";
+        }
         //unescape
         let p1 = this.unescape(codd);//unescape(codd);//=> deprecated
         //Assign ""
