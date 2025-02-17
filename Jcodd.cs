@@ -1,7 +1,6 @@
-﻿using System.Text.Encodings.Web;
+﻿using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Web;
 
 namespace YourOwnProject.EstreSharp
 {
@@ -9,7 +8,7 @@ namespace YourOwnProject.EstreSharp
 
     MIT License
 
-    Copyright (c) 2023 Esterkxz (Ester1 / 에스터1z) converted by Estre Soliette 2024 (since by v0.3)
+    Copyright (c) 2023 Esterkxz (Ester1 / 에스터1z) converted by Estre Soliette 2024 (since v0.3)
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -37,16 +36,19 @@ namespace YourOwnProject.EstreSharp
     //
     // The JSON based lite code format
     //
-    // v0.7 / release 2025.02.09
+    // v0.8 / release 2025.02.17
     //
     // Take to be liten from JSON code to smaller converted characters for like as BASE64.
+    //
+    // And JCODD code output is only one exactly from any defined by same object structure & data.
+    // Be excepted when different version of JCODD.
     //
     //
     // :: Code regulations
     //
     // 1. null is n, true is t, false is f.
-    // 2. No space and carriage return & line feed on code. Only allowed in data.
-    // 3. Omit "" variable definition.
+    // 2. No space and carriage return & line feed in the code. Only allowed for data definition.
+    // 3. Omit "" (double quote) for variable name definition.
 
 
     public partial class Jcodd
@@ -58,6 +60,12 @@ namespace YourOwnProject.EstreSharp
         /// <returns>jcodd</returns>
         public static string ToCodd(string json)
         {
+            switch (json)
+            {
+                case "true": return "t";
+                case "false": return "f";
+                case "null": return "n";
+            }
             string ex;
 
             string p1 = Regex.Replace(Regex.Replace(Regex.Replace(json, @"^[\b\t]+", ""), @"[\b\t\r\n]+$", ""), @"[\b\t]+", "");
@@ -95,6 +103,12 @@ namespace YourOwnProject.EstreSharp
         /// <returns>json</returns>
         public static string ToJson(string codd)
         {
+            switch (codd)
+            {
+                case "t": return "true";
+                case "f": return "false";
+                case "n": return "null";
+            }
             string p1 = Unescape(codd);
             string p2 = Regex.Replace(p1, @"(\{|\}\,|\]\,|\""\,|[eE]?[+\-]?[\d.]+\,|[ntf]\,|true\,|false\,)([^\""\{\}\[\]\,\:]*)\:", "$1\"$2\":");
             string p3 = Regex.Replace(Regex.Replace(p2, @"([\[\,\:])n([\]\,\}])", "$1null$2"), @"([\[\,\:])n([\]\,\}])", "$1null$2");
