@@ -15,7 +15,13 @@ JCODD는 JSON 데이터를 더 작고 효율적인 형식으로 변환하기 위
 
 ## 설치
 
-JCODD는 classic .js 파일로 배포됩니다.
+JCODD는 NPM을 통해 설치할 수 있습니다.
+
+```bash
+npm install jcodd
+```
+
+또는 classic .js 파일로도 사용할 수 있습니다.
 
 ## 사용법
 
@@ -103,7 +109,13 @@ JCODD is a JavaScript library for converting JSON data into a smaller and more e
 
 ## Installation
 
-JCODD is distributed as a classic .js file.
+You can install JCODD via NPM:
+
+```bash
+npm install jcodd
+```
+
+Or use it as a classic .js file.
 
 ## Usage
 

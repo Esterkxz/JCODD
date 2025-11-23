@@ -1,0 +1,23 @@
+{
+  "name": "jcodd",
+  "version": "0.8.2",
+  "description": "JSON Characterized Object Data Definition - The JSON based lite code format",
+  "main": "jcodd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esterkxz/JCODD.git"
+  },
+  "keywords": [
+    "json",
+    "jcodd",
+    "data",
+    "format",
+    "lite",
+    "base64"
+  ],
+  "author": "Esterkxz",
+  "license": "MIT"
+}
