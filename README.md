@@ -28,7 +28,7 @@ npm install jcodd
 ### JSON 데이터 압축
 
 ```javascript
-const json = '{"name":"Jane","age":30,"city":"Incheon"}';
+const json = '{"name":"Jane","age":30,"city":null}';
 const jcodd = Jcodd.toCodd(json);
 console.log(jcodd); // 압축된 JCODD 형식의 데이터 출력
 ```
@@ -36,7 +36,7 @@ console.log(jcodd); // 압축된 JCODD 형식의 데이터 출력
 ### JCODD 데이터 복원
 
 ```javascript
-const jcodd = '...'; // JCODD 형식의 데이터
+const jcodd = '{name:"Jane",age:30,city:n}'; // JCODD 형식의 데이터
 const json = Jcodd.toJson(jcodd);
 console.log(json); // 원래의 JSON 데이터 출력
 ```
@@ -52,8 +52,8 @@ console.log(jcodd); // 객체를 JCODD 형식으로 변환하여 출력
 ### JCODD 형식에서 객체로 변환
 
 ```javascript
-const jcodd = '...'; // JCODD 형식의 데이터
-const obj = Jcodd.decoddify(jcodd);
+const jcodd = '{name:"Jane",age:30,city:n}'; // JCODD 형식의 데이터
+const obj = Jcodd.parse(jcodd);
 console.log(obj); // JCODD 형식의 데이터를 객체로 변환하여 출력
 ```
 
@@ -122,7 +122,7 @@ Or use it as a classic .js file.
 ### JSON Data Compression
 
 ```javascript
-const json = '{"name":"Jane","age":30,"city":"Incheon"}';
+const json = '{"name":"Jane","age":30,"city":null}';
 const jcodd = Jcodd.toCodd(json);
 console.log(jcodd); // Outputs compressed JCODD format data
 ```
@@ -130,7 +130,7 @@ console.log(jcodd); // Outputs compressed JCODD format data
 ### JCODD Data Restoration
 
 ```javascript
-const jcodd = '...'; // JCODD format data
+const jcodd = '{name:"Jane",age:30,city:n}'; // JCODD format data
 const json = Jcodd.toJson(jcodd);
 console.log(json); // Outputs original JSON data
 ```
@@ -146,8 +146,8 @@ console.log(jcodd); // Outputs object converted to JCODD format
 ### Conversion from JCODD Format to Object
 
 ```javascript
-const jcodd = '...'; // JCODD format data
-const obj = Jcodd.decoddify(jcodd);
+const jcodd = '{name:"Jane",age:30,city:n}'; // JCODD format data
+const obj = Jcodd.parse(jcodd);
 console.log(obj); // Outputs JCODD format data converted to object
 ```
 
