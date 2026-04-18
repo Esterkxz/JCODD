@@ -30,7 +30,7 @@ SOFTWARE.
 //
 // The JSON based lite code format
 //
-// v0.9.0 / release 2026.01.12
+// v0.9.1 / release 2026.04.18
 //
 // Take to be liten from JSON code to smaller converted characters for like as BASE64.
 //
