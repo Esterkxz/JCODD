@@ -1,2 +1,6 @@
 .git
 Jcodd.cs
+
+# 허브 조율 관련 내부 문서 (npm 배포 대상 아님)
+AGENTS.md
+.agent/
