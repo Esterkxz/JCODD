@@ -10,10 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/Esterkxz/JCODD.git"
   },
+  "homepage": "https://github.com/Esterkxz/JCODD#readme",
+  "bugs": {
+    "url": "https://github.com/Esterkxz/JCODD/issues"
+  },
   "keywords": [
+    "estreui",
+    "jcodd",
     "serialization",
     "json",
-    "jcodd",
     "data",
     "format",
     "lite",
